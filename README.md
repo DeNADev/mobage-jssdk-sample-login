@@ -17,6 +17,9 @@ Mobage JS SDK を利用したMobage Connect へのログインに必要な処理
 * 旧来通り画面遷移してログインする Authorization Code Grant Flow
 * Game Server を用いない Client-Side Flow
 
+### 関連ドキュメント
+こちらではサンプルを動かす簡単な手順をまとめていますが、Mobage JS SDK の詳細については「[Mobage JS SDK 開発ドキュメント](https://docs.mobage.com/display/JPJSSDK/Guide_for_Engineers)」を参照してください。
+
 ## サンプルを動かすまでの手順
 ### サンプルをインストールする
 このサンプルは PHP のファイル群から構成されています。PHP が実行されるディレクトリにコピーします。Web サーバーの設定により異なりますが、デフォルトの Mac 環境では下記ディレクトリに移動します。
