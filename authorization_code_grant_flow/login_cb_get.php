@@ -23,6 +23,7 @@
  */
  
 require_once('../config.php');
+require_once('../common.php');
 require_once('../JWT/JWT.php');
 
 // if you want to save the refresh_token on your GameServer,
@@ -77,6 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $json_body = json_decode($contents, true);
 
         try {
+            checkSignatureAlgorithm($json_body['id_token']);
             $jwt_claims = JWT::decode($json_body['id_token'], PUBLIC_KEY);
         } catch (Exception $e) {
             error_log('jwt_decode failed because ' . $e . "\n", 3, ERROR_LOG_PATH);
