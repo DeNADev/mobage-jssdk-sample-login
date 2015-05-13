@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         try {
             checkSignatureAlgorithm($json_body['id_token']);
-            $jwt_claims = JWT::decode($json_body['id_token'], PUBLIC_KEY);
+            $jwt_claims = JWT::decode($json_body['id_token'], PUBLIC_KEY, array('RS256'));
         } catch (Exception $e) {
             error_log('jwt_decode failed because ' . $e . "\n", 3, ERROR_LOG_PATH);
             header('Location: ' . CLIENT_URI);
